@@ -1,0 +1,17 @@
+% PSINS-format SIMU log file. (DO NOT EDIT!)
+% 2014-03-21 17:31:51  by Yan Gongmin
+% 1st line of the data includes(maybe inaccurate):
+%   [pitch0(deg), roll0(deg), yaw0(deg), VE0(m/s), VN0(m/s), VU0(m/s)].
+% 2nd line of the data includes:
+%   [latitude0(deg), longitude0(deg), height0(m), t0(s), sampling-interval(ms), g(m/s^2)].
+% 3rd line of the data includes:
+%   [gf_x, gf_y, gf_z, af_x, af_y, af_z]
+%   where gf is gyro scale factor in arcsec, af is acc scale factor in ug*s.
+%   Conventionally, SIMU is mounted on vehicle with "X-Right,Y-Foward,Z-Up" orientation.
+
+0.000000 0.000000 -90.600000 0.000000 0.000000 0.000000f
+34.24604800 108.90966400 380.000 0.00000000 10.00000000 9.780327f
+   
+0.100000 0.100000 0.100000 125.000 125.000 125.000 
+0 0 2 0 0 80
+0 0 7 0 0 80

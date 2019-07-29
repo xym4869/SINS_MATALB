@@ -1,0 +1,15 @@
+glvs;
+imu_data0 = csvread('D:\สตั้สา\data\0429CPT_data\RAWIMUSA.csv');
+ts = 0.01;
+imu_data0 = imu_data0(1:480/ts,2:end);
+imu_data = imu_data0;
+imu_data(:,1:3)=imu_data0(:,5:7);
+imu_data(:,4:6)=imu_data0(:,2:4);
+imu_data(:,end)=imu_data0(:,1);
+pos = [deg2rad(40.08743896);deg2rad(116.265441);44.5212];
+att = alignsb(imu_data,pos);
+%att1 = aligni0(imu_data,pos,ts);
+%att2 = aligni0fit(imu_data,pos,ts);
+phi = [1.0;1.0;30]*glv.deg;
+imuerr = imuerrset(0.03, 5000, 0.001, 500);
+[att0f, attkf, xkpkf] = alignfn(imu_data, att, pos, phi,imuerr,ts);
